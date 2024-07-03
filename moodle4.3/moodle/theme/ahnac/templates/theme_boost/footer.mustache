@@ -1,0 +1,141 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_boost/footer
+
+    Page footer.
+
+    Example context (json):
+    {
+        "output": {
+            "page_doc_link": "Documentation for this page",
+            "supportemail": "<a href=\"#\">Contact site support</a>",
+            "has_popover_links": true,
+            "services_support": "Services and support",
+            "login_info": "You are logged in as cute kitten",
+            "moodle_release": "90210",
+            "has_communication_links": true,
+            "communication_url": "https://element:8081/#/room/#yourroom:synapse",
+            "communication_link": "<a href=\"#\">Communication room</a>"
+        }
+    }
+}}
+
+<footer id="page-footer" class="footer-popover">
+    <div data-region="footer-container-popover">
+        {{#output.has_communication_links}}
+            <button onclick="window.open('{{output.communication_url}}', '_blank', 'noreferrer')" class="btn btn-icon bg-primary text-white icon-no-margin btn-footer-communication" aria-label="{{#str}}communicationroomlink, course, theme_ahnac{{/str}}">
+                {{#pix}}t/messages-o, core{{/pix}}
+            </button>
+        {{/output.has_communication_links}}
+    </div>
+    <div class="footer-content-popover container" data-region="footer-content-popover">
+        <div class="col-lg-6 p-3 ahnac-information">
+            <div class="ahnac-logo">
+                {{# output.should_display_navbar_logo }}
+                    <img src="{{output.get_logo_url}}" class="logo mr-1" alt="{{sitename}}">
+                {{/ output.should_display_navbar_logo }}
+                {{^ output.should_display_navbar_logo }}
+                    {{{ sitename }}}
+                {{/ output.should_display_navbar_logo }}
+            </div>
+            <div class="information-text">
+                <p>{{#str}}ahnacinfo1, theme_ahnac{{/str}}</p>
+                <p>{{#str}}ahnacinfo2, theme_ahnac{{/str}}</p>
+                <p>{{#str}}ahnacinfo3, theme_ahnac{{/str}}</p>
+            </div>
+            {{#output.has_communication_links}}
+                <div class="footer-section p-3 border-bottom footer-link-communication">
+                    <div class="footer-support-link">{{{ output.communication_link }}}</div>
+                </div>
+            {{/output.has_communication_links}}
+            {{# output.has_popover_links }}
+                <div class="footer-section p-3 border-bottom">
+                    {{# output.page_doc_link }}
+                        <div class="footer-support-link">{{{ output.page_doc_link }}}</div>
+                    {{/ output.page_doc_link }}
+
+                    {{# output.services_support_link }}
+                        <div class="footer-support-link">{{{ output.services_support_link }}}</div>
+                    {{/ output.services_support_link }}
+
+                    {{# output.supportemail }}
+                        <div class="footer-support-link">{{{ output.supportemail }}}</div>
+                    {{/ output.supportemail }}
+                </div>
+            {{/ output.has_popover_links }}
+        </div>
+        <div class="col-lg-2 footer-section p-3 border-bottom">
+            <div class="sitemap footer-top">
+                <h4>{{#str}}sitemaptitle, theme_ahnac{{/str}}</h4>
+                <ul>   
+                    <li class="mb-2"><a href="{{#str}}homeurl, theme_ahnac{{/str}}">{{#str}}home, theme_ahnac{{/str}}</a></li>
+                    <li class="mb-2"><a href="{{#str}}coursesurl, theme_ahnac{{/str}}">{{#str}}courses, theme_ahnac{{/str}}</a></li>
+                    <li class="mb-2"><a href="{{#str}}tutorialsurl, theme_ahnac{{/str}}">{{#str}}tutorials, theme_ahnac{{/str}}</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                {{{ output.standard_footer_html }}}
+                {{{ output.standard_end_of_body_html }}}
+            </div>
+        </div>
+        <div class="col-lg-2 footer-section p-3 border-bottom">
+            <div class="social-media footer-top">
+                <h4>{{#str}}followus, theme_ahnac{{/str}}</h4>
+                <ul>
+                    <li class="mb-3"><a href="https://www.facebook.com/groupeahnac/"><i class="fab fa-facebook"></i>{{#str}}facebook, theme_ahnac{{/str}}</a></li>
+                    <li class="mb-3"><a href="https://www.instagram.com/groupe.ahnac/"><i class="fab fa-instagram"></i>{{#str}}instagram, theme_ahnac{{/str}}</a></li>
+                    <li class="mb-3"><a href="https://twitter.com/GroupeAhnac"><i class="fab fa-twitter"></i>{{#str}}twitter, theme_ahnac{{/str}}</a></li>
+                    <li class="mb-3"><a href="https://www.youtube.com/@groupeahnac1621"><i class="fab fa-youtube"></i>{{#str}}youtube, theme_ahnac{{/str}}</a></li>
+                    <li class="mb-3"><a href="https://fr.linkedin.com/company/groupe-ahnac"><i class="fab fa-linkedin"></i>{{#str}}linkedin, theme_ahnac{{/str}}</a></li>
+                </ul>
+            </div>
+            <div class="logininfo footer-bottom">
+                {{{ output.login_info }}}
+            </div>
+            <div class="tool_usertours-resettourcontainer">
+            </div>
+        </div>
+        <div class="col-lg-2 footer-section p-3 border-bottom">
+            <div class="other footer-top">
+                <h4>{{#str}}otherlinks, theme_ahnac{{/str}}</h4>
+                <ul>
+                    <li class="mb-2"><a href="https://www.ahnac.com/podcasts/">{{#str}}podcasts, theme_ahnac{{/str}}</a></li>
+                    <li class="mb-2"><a href="https://my.ahnac.com/login">{{#str}}myahnac, theme_ahnac{{/str}}</a></li>
+                    <li class="mb-2"><a href="https://app.bluekango.com/groupe_ahnac/index.php/app/intranet/home">{{#str}}bluekango, theme_ahnac{{/str}}</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">{{#str}}poweredbymoodle, core, theme_ahnac{{/str}}</div>
+            {{#output.moodle_release}}
+                <div>
+                    {{#str}}version, core, theme_ahnac{{/str}} {{{ output.moodle_release }}}
+                </div>
+            {{/output.moodle_release}}
+        </div>
+    </div>
+
+    <div class="footer-content-debugging footer-dark bg-dark text-light">
+        <div class="container-fluid footer-dark-inner">
+            {{{ output.debug_footer_html }}}
+        </div>
+    </div>
+</footer>
+{{#js}}
+require(['theme_boost/footer-popover'], function(FooterPopover) {
+    FooterPopover.init();
+});
+{{/js}}

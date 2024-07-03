@@ -1,0 +1,25 @@
+.dashboard-course-list {
+    width: 100%;
+}
+
+.card {
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+}
+
+.card .card-img-top.align-top {
+    max-height: 200px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    filter: invert(100%);
+    width: 10% !important;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}

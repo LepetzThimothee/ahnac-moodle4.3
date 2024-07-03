@@ -1,0 +1,46 @@
+.button-dsb {
+    height: 160px;
+}
+
+.button-dsb .content {
+    color: #f5d410;
+    height: 100%;
+}
+
+.standard-shadow {
+    box-shadow: 0 5px 15px rgba(0,0,0,.35);
+}
+
+.dashboard-img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1200px) {
+    .dashboard-img {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .dashboard-table {
+        max-height: 700px;
+        overflow-y: auto;
+    }
+}
+
+.t-responsive {
+    overflow-x: auto;
+}
+
+.flex-shrink-5 {
+    flex-shrink: 5;
+}
+
+.progress {
+    width: 8rem;
+}
+
+.w-35 {
+    width: 35%;
+}
